@@ -61,12 +61,11 @@ class Trainer:
             self.n_of_potions = new_number_of_potions
 
     def attack_trainer(self, opponent_trainer):
-        opponent_chinpokomon = opponent_trainer.team[opponent_trainer.active_chinpokomon]
-        self.active_chinpokomon.attack(opponent_chinpokomon)
+        self.active_chinpokomon.attack(opponent_trainer.active_chinpokomon)
 
     def switch_chinpokomon(self, switched_to_chinpokomon):
         switched_chinpokomon = self.active_chinpokomon
         self.active_chinpokomon = switched_to_chinpokomon
         print("{trainer} switched {switched_chinpokomon} to {active_chinpokomon}".format(trainer=self.name,
-                                                                                         switched_chinpokomon=switched_chinpokomon,
-                                                                                         active_chinpokomon=self.active_chinpokomon))
+                                                                                         switched_chinpokomon=switched_chinpokomon.name,
+                                                                                         active_chinpokomon=self.active_chinpokomon.name))

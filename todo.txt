@@ -1,2 +1,6 @@
 fix double string issue
-block healing over max health
+block healing over max
+add comments
+23 36
+change how max heatlh works
+create team system
