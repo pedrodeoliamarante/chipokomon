@@ -1,10 +1,9 @@
-from classes import Chinpokomon, Trainer
+from classes import Trainer, Velocirapstar, Brocoli, Fetuswami, Donkeytrom
 
-velocirapstar = Chinpokomon("Velocirapstar", 10, 10, "fire", 8, False)
-brocoli = Chinpokomon("Brocoli", 10, 8, "grass", 10, False)
-fetuswami = Chinpokomon("Fetuswami", 10, 9, "water", 10, False)
-donkeytrom = Chinpokomon("Donkeytrom", 11, 7, "water", 10, False)
+cartman_velocirapstar = Velocirapstar(7)
+cartman_fetuswami = Fetuswami(4)
+kenny_brocoli = Brocoli(5)
+kenny_donkeytrom = Donkeytrom(6)
 
-cartman = Trainer("Cartman", [velocirapstar, fetuswami], 2, velocirapstar)
-kenny = Trainer("Kenny", [brocoli, donkeytrom], 0, donkeytrom)
-
+cartman = Trainer("Cartman", [cartman_velocirapstar, cartman_fetuswami], 2)
+kenny = Trainer("Kenny", [kenny_brocoli, kenny_donkeytrom], 0)
