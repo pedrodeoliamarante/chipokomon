@@ -9,12 +9,12 @@ class Chinpokomon:
         self.is_knocked_out = False
 
     def __repr__(self):
-        return f"This level {self.level} {self.name} has {self.current_health} hit points remaining. They are a {self.chinpokomon_type} type Pokemon"
+        return f"This level {self.level} {self.name} has {self.current_health} hit points remaining. They are a {self.chinpokomon_type} type Chinpokomon"
 
     def revive(self):
-        # Reviving a pokemon will flip it's status to False
+        # Reviving a Chinpokomon will flip it's status to False
         self.is_knocked_out = False
-        # A revived pokemon can't have 0 health. This is a safety precaution. revive() should only be called if the pokemon was given some health, but if it somehow has no health, its health gets set to 1.
+        # A revived Chinpokomon can't have 0 health. This is a safety precaution. revive() should only be called if the pokemon was given some health, but if it somehow has no health, its health gets set to 1.
         if self.current_health == 0:
             self.current_health = 1
         print(f"{self.name} was revived!")
@@ -83,10 +83,10 @@ class Trainer:
         self.active_chinpokomon = team[0]
 
     def __repr__(self):
-        print(f"The trainer {self.name} has the following pokemon")
+        print(f"The trainer {self.name} has the following Chinpokomon")
         for chinpokomon in self.team:
             print(chinpokomon)
-        return f"The current active pokemon is {self.active_chinpokomon.name}"
+        return f"The current active Chinpokomon is {self.active_chinpokomon.name}"
 
     def use_potion(self, index_of_the_healed):
         if self.n_of_potions <= 0:
@@ -105,13 +105,13 @@ class Trainer:
 
     def switch_chinpokomon(self, new_active):
         if len(self.team) > new_active >= 0:
-            # You can't switch to a pokemon that is knocked out
+            # You can't switch to a Chinpokomon that is knocked out
             if self.team[new_active].is_knocked_out:
-                print(f"{self.team[new_active].name} is knocked out. You can't make it your active pokemon")
-            # You can't switch to your current pokemon
+                print(f"{self.team[new_active].name} is knocked out. You can't make it your active Chinpokomon")
+            # You can't switch to your current Chinpokomon
             elif new_active == self.active_chinpokomon:
-                print(f"{self.active_chinpokomon} is already your active pokemon")
-            # Switches the pokemon
+                print(f"{self.active_chinpokomon} is already your active Chinpokomon")
+            # Switches the Chinpokomon
             else:
                 self.active_chinpokomon = self.team[new_active]
                 print(f"Go {self.active_chinpokomon.name}, it's your turn!")
